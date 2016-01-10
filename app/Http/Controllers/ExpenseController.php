@@ -73,7 +73,7 @@ class ExpenseController extends Controller
         $expense->name = $request->input('name');
         $expense->value = $request->input('value');
         $expense->description = $request->input('description');
-        $expense->category_id = $request->input('category');
+        $expense->category_id = $request->input('category_id');
         $expense->save();
         return redirect()->route('expense.index');
     }
@@ -86,8 +86,9 @@ class ExpenseController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $expense = $this->expense->query()->find($id);
-        return view('expense.edit', array('expense' => $expense));
+        return view('expense.edit', array('expense' => $expense, 'categories' => $categories));
     }
 
     /**
@@ -114,7 +115,7 @@ class ExpenseController extends Controller
         $expense->name = $request->input('name');
         $expense->value = $request->input('value');
         $expense->description = $request->input('description');
-        $expense->category_id = $request->input('category');
+        $expense->category_id = $request->input('category_id');
         $expense->save();
 
         return redirect()->route('expense.index');
