@@ -61,7 +61,7 @@ class ExpenseController extends Controller
         $validator = Validator::make($request->all(), array(
             'name' => 'required',
             'value' => 'required',
-            'category' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id'
         ));
 
         if ($validator->fails())
@@ -103,7 +103,7 @@ class ExpenseController extends Controller
         $validator = Validator::make($request->all(), array(
             'name' => 'required',
             'value' => 'required',
-            'category' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id'
         ));
 
         if ($validator->fails())
