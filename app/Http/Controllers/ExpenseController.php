@@ -35,7 +35,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        $expenses = $this->expense->query()->with('category')->get();
+        $expenses = $this->expense->query()->with('category')->orderBy('created_at', 'desc')->get();
         return view('expense.index', array('expenses' => $expenses));
     }
 
