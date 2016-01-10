@@ -17,7 +17,7 @@
                 <div class="form-group {{ ($errors->has('value')) ? 'has-error' : '' }}">
                     <label class="col-sm-2 control-label">Value</label>
                     <div class="col-sm-10">
-                        <input type="number" step="1" name="value" class="form-control" value="{{ old('value') ?: $expense->value }}">
+                        <input type="number" step="0.01" name="value" class="form-control" value="{{ old('value') ?: $expense->value }}">
                         <p class="help-block">{{ ($errors->has('value') ? $errors->first('value') : '') }}</p>
                     </div>
                 </div>
