@@ -11,9 +11,10 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return redirect()->route('category.index');
-});
+// Dashboard
+$app->get('/', [
+    'as' => 'dashboard.index', 'uses' => 'DashboardController@index'
+]);
 
 // Categories
 $app->get('category', [
