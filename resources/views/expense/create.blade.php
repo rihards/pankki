@@ -20,15 +20,15 @@
                         <p class="help-block">{{ ($errors->has('value') ? $errors->first('value') : '') }}</p>
                     </div>
                 </div>
-                <div class="form-group {{ ($errors->has('category')) ? 'has-error' : '' }}">
+                <div class="form-group {{ ($errors->has('category_id')) ? 'has-error' : '' }}">
                     <label class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-10">
-                        <select name="category" class="form-control">
+                        <select name="category_id" class="form-control">
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        <p class="help-block">{{ ($errors->has('category') ? $errors->first('category') : '') }}</p>
+                        <p class="help-block">{{ ($errors->has('category_id') ? $errors->first('category_id') : '') }}</p>
                     </div>
                 </div>
                 <div class="form-group {{ ($errors->has('description')) ? 'has-error' : '' }}">
@@ -38,7 +38,6 @@
                         <p class="help-block">{{ ($errors->has('description') ? $errors->first('description') : '') }}</p>
                     </div>
                 </div>
-
             </div>
             <div class="panel-footer">
                 <button type="submit" class="btn btn-sm btn-success btn-addon"><i class="glyphicon glyphicon-ok"></i>Create</button>
